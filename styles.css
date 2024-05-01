@@ -1,9 +1,9 @@
-*body {
+body {
     font-family: 'Sans Serif', sans-serif;
     overflow-y: scroll;
     text-align: center;
-    position:relative;
-    left: 50%;
+    
+    
 }
 
 .logo-container {
@@ -40,6 +40,7 @@
     border-radius: 6px;
     font-weight: bold;
     margin-bottom: 20px;
+    position:relative;
 }
 
 .contact-container {
@@ -49,6 +50,7 @@
     transform: translateX(-50%);
     text-align: center;
     margin-bottom: 50px;
+    position:relative;
 }
 
 .contact-button {
@@ -60,6 +62,7 @@
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
+    position:relative;
 }
 
 footer {
