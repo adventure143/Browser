@@ -1,16 +1,82 @@
-// Disable right-click and text selection
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+body {
+    font-family: 'Sans Serif', sans-serif;
+    overflow-y: scroll;
+    text-align: center;
+}
 
-document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-});
+.logo-container {
+    margin-top: 30px;
+}
 
-// Update footer with current year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.5s;
+}
 
-// Open contact details page on button click
-document.getElementById('contact-button').addEventListener('click', function() {
-    window.open('contact-details.html', '_blank');
-});
+.logo:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid black;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    animation: jump 0.5s infinite alternate;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
