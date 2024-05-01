@@ -41,6 +41,7 @@ body {
 }
 
 .contact-container {
+    position:center;
     bottom: 0;
     left: 50%;
     width: 90%;
