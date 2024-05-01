@@ -41,7 +41,6 @@ body {
 }
 
 .contact-container {
-    position: fixed;
     bottom: 0;
     left: 50%;
     width: 90%;
