@@ -1,78 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-        .contact-form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            width: 320px;
-            text-align: center;
-        }
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .contact-box {
+        background-color: #e0e0e0;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+                    -10px -10px 20px rgba(255, 255, 255, 0.5);
+        max-width: 300px;
+        text-align: center;
+    }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .contact-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    .contact-number {
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
-
-<div class="contact-form">
-    <h2>Contact Us</h2>
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="text" id="email" placeholder="Your Email">
-    <textarea id="message" placeholder="Your Message"></textarea>
-    <button onclick="sendEmail()">Send Email via Gmail</button>
-    <button onclick="openWhatsApp()">Message via WhatsApp</button>
-</div>
-
-<script>
-    function sendEmail() {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const subject = `Contact Request from ${name}`;
-        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-        const mailtoLink = `mailto:kskannancontact@gmail.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-    }
-
-    function openWhatsApp() {
-        const phone = '+919655636477';
-        const message = encodeURIComponent('Hello, I would like to connect.');
-        const whatsappLink = `https://wa.me/${phone}?text=${message}`;
-        window.open(whatsappLink, '_blank');
-    }
-</script>
-
+    <div class="contact-box">
+        <div class="contact-item">
+            <img src="https://i.postimg.cc/Vvb3Cj3d/Pngtree-call-icon-png-3621527.png" alt="Contact Icon" class="contact-icon"> <!-- Contact number icon URL -->
+            <span class="contact-number">Contact Number:</span>
+            <span class="contact-number">+919655636477</span>
+        </div>
+        <div class="contact-item">
+            <img src="https://i.postimg.cc/WbnfXnJ6/1417112.png" alt="WhatsApp Icon" class="contact-icon"> <!-- WhatsApp number icon URL -->
+            <span class="contact-number">WhatsApp Number:</span>
+            <span class="contact-number">+919655636477</span>
+        </div>
+    </div>
 </body>
 </html>
