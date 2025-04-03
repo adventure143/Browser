@@ -503,17 +503,11 @@
             font-size: 1.1rem;
             font-weight: 500;
             margin: 1rem 0;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
             color: white;
-            text-decoration: none;
             width: 100%;
             max-width: 280px;
-        }
-        
-        .contact-number:active {
-            background: rgba(255,255,255,0.2);
-            transform: scale(0.98);
+            pointer-events: none;
+            user-select: text;
         }
         
         .contact-note {
@@ -582,11 +576,6 @@
             .contact-number {
                 font-size: 1.3rem;
                 padding: 1rem 2rem;
-            }
-            
-            .contact-number:hover {
-                background: rgba(255,255,255,0.2);
-                transform: scale(1.03);
             }
             
             .contact-note {
@@ -815,7 +804,7 @@
                     <h2 class="contact-title">Contact Us</h2>
                 </div>
                 <p>For any queries about the giveaway:</p>
-                <a href="tel:+919655636477" class="contact-number">+91 96556 36477</a>
+                <div class="contact-number">+91 96556 36477</div>
                 <p class="contact-note">Available 10AM - 10PM<br>Sunday to Saturday</p>
             </div>
         </section>
@@ -860,41 +849,6 @@
         // Prevent zooming and other touch manipulations
         document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
-        });
-        
-        // Enhanced contact number interaction
-        const contactNumber = document.querySelector('.contact-number');
-        
-        // For mobile touch devices
-        contactNumber.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
-            this.style.backgroundColor = 'rgba(255,255,255,0.2)';
-        });
-        
-        contactNumber.addEventListener('touchend', function() {
-            this.style.transform = 'scale(1)';
-            this.style.backgroundColor = 'rgba(255,255,255,0.1)';
-        });
-        
-        // For desktop hover
-        contactNumber.addEventListener('mouseenter', function() {
-            if (window.innerWidth >= 768) {
-                this.style.backgroundColor = 'rgba(255,255,255,0.2)';
-            }
-        });
-        
-        contactNumber.addEventListener('mouseleave', function() {
-            if (window.innerWidth >= 768) {
-                this.style.backgroundColor = 'rgba(255,255,255,0.1)';
-            }
-        });
-        
-        // Desktop fallback
-        contactNumber.addEventListener('click', function(e) {
-            if(!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                e.preventDefault();
-                alert('Please call: +91 96556 36477');
-            }
         });
     </script>
 </body>
