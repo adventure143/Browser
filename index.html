@@ -427,35 +427,171 @@
             font-size: 0.9rem;
         }
         
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+        /* 3D Contact Section - Enhanced for Mobile */
+        .contact-section {
+            width: 100%;
+            max-width: 500px;
+            perspective: 1000px;
+            margin: 2rem auto;
         }
         
-        .social-icon {
-            width: 50px;
-            height: 50px;
+        .contact-card {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 
+                0 10px 25px rgba(0,0,0,0.2),
+                inset 0 0 8px rgba(255,255,255,0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            color: white;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 0 auto;
+        }
+        
+        .contact-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .icon-3d-phone {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #4CAF50, #2E7D32);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            background: transparent;
-            pointer-events: auto;
+            transform-style: preserve-3d;
+            position: relative;
+            box-shadow: 
+                0 8px 20px rgba(0,0,0,0.3),
+                inset 0 -4px 0 rgba(0,0,0,0.2),
+                inset 0 0 8px rgba(255,255,255,0.3);
+            animation: float 3s ease-in-out infinite;
         }
         
-        .social-icon img {
+        .icon-3d-phone i {
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transform: translateZ(12px);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateY(0); }
+            50% { transform: translateY(-6px) rotateY(8deg); }
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin: 0;
+            color: white;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        
+        .contact-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.9rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            pointer-events: none;
+            max-width: 280px;
         }
         
-        .social-icon:hover {
-            transform: scale(1.1);
+        .contact-number:active {
+            background: rgba(255,255,255,0.2);
+            transform: scale(0.98);
+        }
+        
+        .contact-note {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 400px) {
+            .contact-card {
+                padding: 1.2rem;
+                border-radius: 14px;
+            }
+            
+            .icon-3d-phone {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .icon-3d-phone i {
+                font-size: 1.2rem;
+            }
+            
+            .contact-title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-number {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .contact-note {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .contact-card {
+                padding: 2rem;
+                border-radius: 20px;
+            }
+            
+            .contact-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 
+                    0 20px 40px rgba(0,0,0,0.3),
+                    inset 0 0 10px rgba(255,255,255,0.1);
+            }
+            
+            .icon-3d-phone {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .icon-3d-phone i {
+                font-size: 1.8rem;
+            }
+            
+            .contact-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-number {
+                font-size: 1.3rem;
+                padding: 1rem 2rem;
+            }
+            
+            .contact-number:hover {
+                background: rgba(255,255,255,0.2);
+                transform: scale(1.03);
+            }
+            
+            .contact-note {
+                font-size: 0.9rem;
+            }
         }
         
         @keyframes float {
@@ -670,11 +806,19 @@
             </ul>
         </section>
         
-        <div class="social-media">
-            <a href="https://wa.me/919655636477" class="social-icon" target="_blank" rel="noopener noreferrer">
-                <img src="https://i.postimg.cc/5N9YqwGC/Whats-App-3-D-Logo.png" alt="WhatsApp">
-            </a>
-        </div>
+        <section class="contact-section">
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div class="icon-3d-phone">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h2 class="contact-title">Contact Us</h2>
+                </div>
+                <p>For any queries about the giveaway:</p>
+                <a href="tel:+919655636477" class="contact-number">+91 96556 36477</a>
+                <p class="contact-note">Available 10AM - 10PM<br>Sunday to Saturday</p>
+            </div>
+        </section>
     </div>
 
     <script>
@@ -716,6 +860,41 @@
         // Prevent zooming and other touch manipulations
         document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
+        });
+        
+        // Enhanced contact number interaction
+        const contactNumber = document.querySelector('.contact-number');
+        
+        // For mobile touch devices
+        contactNumber.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+            this.style.backgroundColor = 'rgba(255,255,255,0.2)';
+        });
+        
+        contactNumber.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+            this.style.backgroundColor = 'rgba(255,255,255,0.1)';
+        });
+        
+        // For desktop hover
+        contactNumber.addEventListener('mouseenter', function() {
+            if (window.innerWidth >= 768) {
+                this.style.backgroundColor = 'rgba(255,255,255,0.2)';
+            }
+        });
+        
+        contactNumber.addEventListener('mouseleave', function() {
+            if (window.innerWidth >= 768) {
+                this.style.backgroundColor = 'rgba(255,255,255,0.1)';
+            }
+        });
+        
+        // Desktop fallback
+        contactNumber.addEventListener('click', function(e) {
+            if(!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                e.preventDefault();
+                alert('Please call: +91 96556 36477');
+            }
         });
     </script>
 </body>
