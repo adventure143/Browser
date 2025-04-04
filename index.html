@@ -551,6 +551,70 @@
             background: var(--primary);
         }
         
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .language-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 0.5rem;
+            display: none;
+            width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .language-dropdown.show {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .language-option:hover {
+            background: rgba(52, 152, 219, 0.1);
+        }
+        
+        .language-option.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
         /* Enhanced Mobile Responsiveness */
         @media (max-width: 400px) {
             .contact-card {
@@ -580,10 +644,14 @@
                 font-size: 0.8rem;
             }
             
-            .scroll-btn {
+            .scroll-btn, .language-btn {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
+            }
+            
+            .language-dropdown {
+                width: 120px;
             }
         }
         
@@ -711,70 +779,70 @@
             <div class="title-container">
                 <img src="https://i.postimg.cc/Fzw41xPz/KS-Agency-Logo.png" alt="KS Agency Logo" class="agency-logo">
                 <h1 class="agency-title">KS Agency</h1>
-                <div class="anniversary-badge">1st Anniversary!</div>
+                <div class="anniversary-badge" data-i18n="anniversaryBadge">1st Anniversary!</div>
             </div>
-            <p class="subtitle">
+            <p class="subtitle" data-i18n="subtitle">
                 Thank you for an amazing first year!<br>
                 Our top 3 ShareChat chatroom contributors win premium gifts!
             </p>
         </header>
         
         <section class="giveaway-section">
-            <h2 class="section-title">Anniversary Giveaway Prizes</h2>
-            <p>Top 3 contributors with highest coins in our ShareChat chatroom will win these amazing prizes!</p>
+            <h2 class="section-title" data-i18n="giveawayTitle">Anniversary Giveaway Prizes</h2>
+            <p data-i18n="giveawayDesc">Top 3 contributors with highest coins in our ShareChat chatroom will win these amazing prizes!</p>
             
             <div class="prizes-container">
                 <!-- 1st Prize -->
                 <div class="prize-card gold">
-                    <div class="prize-rank">1st</div>
+                    <div class="prize-rank" data-i18n="firstPrize">1st</div>
                     <div class="prize-image-container">
                         <img src="https://i.postimg.cc/90Pxc9TG/Boat-Airdopes-141.png" alt="Boat Airdopes 141" class="prize-image">
                     </div>
                     <h3 class="prize-name">Boat Airdopes 141</h3>
-                    <p class="prize-desc">Premium wireless earbuds with 42hrs playback</p>
+                    <p class="prize-desc" data-i18n="firstPrizeDesc">Premium wireless earbuds with 42hrs playback</p>
                 </div>
                 
                 <!-- 2nd Prize -->
                 <div class="prize-card silver">
-                    <div class="prize-rank">2nd</div>
+                    <div class="prize-rank" data-i18n="secondPrize">2nd</div>
                     <div class="prize-image-container">
                         <img src="https://i.postimg.cc/pXLvpgtj/Boat-Airdopes-161.png" alt="Boat Airdopes 161" class="prize-image">
                     </div>
                     <h3 class="prize-name">Boat Airdopes 161</h3>
-                    <p class="prize-desc">Wireless earbuds with 40hrs playback</p>
+                    <p class="prize-desc" data-i18n="secondPrizeDesc">Wireless earbuds with 40hrs playback</p>
                 </div>
                 
                 <!-- 3rd Prize -->
                 <div class="prize-card bronze">
-                    <div class="prize-rank">3rd</div>
+                    <div class="prize-rank" data-i18n="thirdPrize">3rd</div>
                     <div class="prize-image-container">
                         <img src="https://i.postimg.cc/jSkSxRwC/Boat-Airdopes-131.png" alt="Boat Airdopes 131" class="prize-image">
                     </div>
                     <h3 class="prize-name">Boat Airdopes 131</h3>
-                    <p class="prize-desc">Wireless earbuds with 60hrs playback</p>
+                    <p class="prize-desc" data-i18n="thirdPrizeDesc">Wireless earbuds with 60hrs playback</p>
                 </div>
             </div>
             
             <div class="time-period-container">
-                <h3 class="time-period-title">Competition Period</h3>
+                <h3 class="time-period-title" data-i18n="competitionPeriod">Competition Period</h3>
                 <div class="time-period-dates">
-                    <span>April 1</span>
+                    <span data-i18n="april1">April 1</span>
                     <i class="fas fa-arrow-right"></i>
-                    <span>April 30</span>
+                    <span data-i18n="april30">April 30</span>
                 </div>
-                <p class="time-period-note">Final coin counts will be calculated after April 30, 2025</p>
+                <p class="time-period-note" data-i18n="finalNote">Final coin counts will be calculated after April 30, 2025</p>
             </div>
             
             <div class="winner-criteria">
-                <h2 class="criteria-title"><i class="fas fa-trophy"></i> How To Win</h2>
+                <h2 class="criteria-title"><i class="fas fa-trophy"></i> <span data-i18n="howToWin">How To Win</span></h2>
                 <div class="criteria-steps">
                     <div class="criteria-step">
                         <div class="step-icon">
                             <i class="fas fa-medal"></i>
                         </div>
                         <div class="step-content">
-                            <h3 class="step-title">Earn Maximum Coins</h3>
-                            <p class="step-desc">Be the most active contributor in our ShareChat chatroom to accumulate the highest coins through regular participation.</p>
+                            <h3 class="step-title" data-i18n="step1Title">Earn Maximum Coins</h3>
+                            <p class="step-desc" data-i18n="step1Desc">Be the most active contributor in our ShareChat chatroom to accumulate the highest coins through regular participation.</p>
                         </div>
                     </div>
                     
@@ -783,8 +851,8 @@
                             <i class="fas fa-calendar-check"></i>
                         </div>
                         <div class="step-content">
-                            <h3 class="step-title">Maintain Until Deadline</h3>
-                            <p class="step-desc">Stay in the top 3 positions until the competition ends on [Anniversary Date].</p>
+                            <h3 class="step-title" data-i18n="step2Title">Maintain Until Deadline</h3>
+                            <p class="step-desc" data-i18n="step2Desc">Stay in the top 3 positions until the competition ends on [Anniversary Date].</p>
                         </div>
                     </div>
                     
@@ -793,8 +861,8 @@
                             <i class="fas fa-bullhorn"></i>
                         </div>
                         <div class="step-content">
-                            <h3 class="step-title">Claim Your Prize</h3>
-                            <p class="step-desc">Winners will be announced in the group and must respond within 7 days to claim their prize.</p>
+                            <h3 class="step-title" data-i18n="step3Title">Claim Your Prize</h3>
+                            <p class="step-desc" data-i18n="step3Desc">Winners will be announced in the group and must respond within 7 days to claim their prize.</p>
                         </div>
                     </div>
                 </div>
@@ -802,35 +870,35 @@
         </section>
         
         <section class="rules-section">
-            <h2 class="rules-title"><i class="fas fa-scroll"></i> Giveaway Rules</h2>
+            <h2 class="rules-title"><i class="fas fa-scroll"></i> <span data-i18n="rulesTitle">Giveaway Rules</span></h2>
             <ul class="rules-list">
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Only active members of KS Agency ShareChat chatroom are eligible</span>
+                    <span data-i18n="rule1">Only active members of KS Agency ShareChat chatroom are eligible</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Top 3 members with highest coins at the end of anniversary date will win</span>
+                    <span data-i18n="rule2">Top 3 members with highest coins at the end of anniversary date will win</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Coins must be earned through regular participation (no artificial boosting)</span>
+                    <span data-i18n="rule3">Coins must be earned through regular participation (no artificial boosting)</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Winners must provide valid shipping address within 7 days of announcement</span>
+                    <span data-i18n="rule4">Winners must provide valid shipping address within 7 days of announcement</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>KS Agency admins' decision regarding winners will be final</span>
+                    <span data-i18n="rule5">KS Agency admins' decision regarding winners will be final</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Prizes will be shipped within 15 days of winner confirmation</span>
+                    <span data-i18n="rule6">Prizes will be shipped within 15 days of winner confirmation</span>
                 </li>
                 <li>
                     <i class="fas fa-check-circle"></i>
-                    <span>Any attempt to manipulate results will lead to disqualification</span>
+                    <span data-i18n="rule7">Any attempt to manipulate results will lead to disqualification</span>
                 </li>
             </ul>
         </section>
@@ -841,13 +909,31 @@
                     <div class="icon-3d-phone">
                         <i class="fas fa-phone-alt"></i>
                     </div>
-                    <h2 class="contact-title">Contact Us</h2>
+                    <h2 class="contact-title" data-i18n="contactTitle">Contact Us</h2>
                 </div>
-                <p>For any queries about the giveaway:</p>
+                <p data-i18n="contactDesc">For any queries about the giveaway:</p>
                 <div class="contact-number">+91 96556 36477</div>
-                <p class="contact-note">Available 10AM - 10PM<br>📆 Everyday</p>
+                <p class="contact-note" data-i18n="contactNote">Available 10AM - 10PM<br>📆 Everyday</p>
             </div>
         </section>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn" id="languageBtn" title="Change Language">
+            <i class="fas fa-language"></i>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <div class="language-option" data-lang="en">English</div>
+            <div class="language-option" data-lang="ta">தமிழ் (Tamil)</div>
+            <div class="language-option" data-lang="ml">മലയാളം (Malayalam)</div>
+            <div class="language-option" data-lang="te">తెలుగు (Telugu)</div>
+            <div class="language-option" data-lang="kn">ಕನ್ನಡ (Kannada)</div>
+            <div class="language-option" data-lang="mr">मराठी (Marathi)</div>
+            <div class="language-option" data-lang="bn">বাংলা (Bengali)</div>
+            <div class="language-option" data-lang="gu">ગુજરાતી (Gujarati)</div>
+            <div class="language-option" data-lang="pa">ਪੰਜਾਬੀ (Punjabi)</div>
+        </div>
     </div>
 
     <!-- Auto-scroll controls -->
@@ -956,6 +1042,367 @@
                 stopAutoScroll();
             }
         });
+
+        // Language selector functionality
+        const languageBtn = document.getElementById('languageBtn');
+        const languageDropdown = document.getElementById('languageDropdown');
+
+        languageBtn.addEventListener('click', function() {
+            languageDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-selector')) {
+                languageDropdown.classList.remove('show');
+            }
+        });
+
+        // Language translations
+        const translations = {
+            en: {
+                anniversaryBadge: "1st Anniversary!",
+                subtitle: "Thank you for an amazing first year!<br>Our top 3 ShareChat chatroom contributors win premium gifts!",
+                giveawayTitle: "Anniversary Giveaway Prizes",
+                giveawayDesc: "Top 3 contributors with highest coins in our ShareChat chatroom will win these amazing prizes!",
+                firstPrize: "1st",
+                firstPrizeDesc: "Premium wireless earbuds with 42hrs playback",
+                secondPrize: "2nd",
+                secondPrizeDesc: "Wireless earbuds with 40hrs playback",
+                thirdPrize: "3rd",
+                thirdPrizeDesc: "Wireless earbuds with 60hrs playback",
+                competitionPeriod: "Competition Period",
+                april1: "April 1",
+                april30: "April 30",
+                finalNote: "Final coin counts will be calculated after April 30, 2025",
+                howToWin: "How To Win",
+                step1Title: "Earn Maximum Coins",
+                step1Desc: "Be the most active contributor in our ShareChat chatroom to accumulate the highest coins through regular participation.",
+                step2Title: "Maintain Until Deadline",
+                step2Desc: "Stay in the top 3 positions until the competition ends on [Anniversary Date].",
+                step3Title: "Claim Your Prize",
+                step3Desc: "Winners will be announced in the group and must respond within 7 days to claim their prize.",
+                rulesTitle: "Giveaway Rules",
+                rule1: "Only active members of KS Agency ShareChat chatroom are eligible",
+                rule2: "Top 3 members with highest coins at the end of anniversary date will win",
+                rule3: "Coins must be earned through regular participation (no artificial boosting)",
+                rule4: "Winners must provide valid shipping address within 7 days of announcement",
+                rule5: "KS Agency admins' decision regarding winners will be final",
+                rule6: "Prizes will be shipped within 15 days of winner confirmation",
+                rule7: "Any attempt to manipulate results will lead to disqualification",
+                contactTitle: "Contact Us",
+                contactDesc: "For any queries about the giveaway:",
+                contactNote: "Available 10AM - 10PM<br>📆 Everyday"
+            },
+            ta: {
+                anniversaryBadge: "1வது ஆண்டுவிழா!",
+                subtitle: "ஒரு அருமையான முதல் ஆண்டுக்கு நன்றி!<br>எங்கள் ShareChat அரட்டை அறையின் முதல் 3 பங்களிப்பாளர்கள் பிரீமியம் பரிசுகளை வெல்கிறார்கள்!",
+                giveawayTitle: "ஆண்டுவிழா கொடுப்பனவு பரிசுகள்",
+                giveawayDesc: "எங்கள் ShareChat அரட்டை அறையில் அதிக நாணயங்களைக் கொண்ட முதல் 3 பங்களிப்பாளர்கள் இந்த அற்புதமான பரிசுகளை வெல்வார்கள்!",
+                firstPrize: "1வது",
+                firstPrizeDesc: "42 மணி நேர பிளேபேக் கொண்ட பிரீமியம் வயர்லெஸ் இயர்பட்ஸ்",
+                secondPrize: "2வது",
+                secondPrizeDesc: "40 மணி நேர பிளேபேக் கொண்ட வயர்லெஸ் இயர்பட்ஸ்",
+                thirdPrize: "3வது",
+                thirdPrizeDesc: "60 மணி நேர பிளேபேக் கொண்ட வயர்லெஸ் இயர்பட்ஸ்",
+                competitionPeriod: "போட்டி காலம்",
+                april1: "ஏப்ரல் 1",
+                april30: "ஏப்ரல் 30",
+                finalNote: "இறுதி நாணய எண்ணிக்கை ஏப்ரல் 30, 2025க்குப் பிறகு கணக்கிடப்படும்",
+                howToWin: "வெல்ல எப்படி",
+                step1Title: "அதிகபட்ச நாணயங்களை சம்பாதிக்கவும்",
+                step1Desc: "வழக்கமான பங்களிப்பு மூலம் அதிக நாணயங்களை சேகரிக்க எங்கள் ShareChat அரட்டை அறையில் மிகவும் சுறுசுறுப்பான பங்களிப்பாளராக இருங்கள்.",
+                step2Title: "காலக்கெடு வரை பராமரிக்கவும்",
+                step2Desc: "[ஆண்டுவிழா தேதி] வரை முதல் 3 இடங்களில் இருங்கள்.",
+                step3Title: "உங்கள் பரிசை கோரவும்",
+                step3Desc: "வெற்றியாளர்கள் குழுவில் அறிவிக்கப்படுவார்கள் மற்றும் அவர்களின் பரிசை கோர 7 நாட்களுக்குள் பதிலளிக்க வேண்டும்.",
+                rulesTitle: "கொடுப்பனவு விதிகள்",
+                rule1: "KS Agency ShareChat அரட்டை அறையின் செயலில் உறுப்பினர்கள் மட்டுமே தகுதியுடையவர்கள்",
+                rule2: "ஆண்டுவிழா தேதியின் முடிவில் அதிக நாணயங்களைக் கொண்ட முதல் 3 உறுப்பினர்கள் வெல்வார்கள்",
+                rule3: "நாணயங்கள் வழக்கமான பங்களிப்பு மூலம் சம்பாதிக்கப்பட வேண்டும் (செயற்கையாக அதிகரிப்பது இல்லை)",
+                rule4: "வெற்றியாளர்கள் அறிவிப்பின் 7 நாட்களுக்குள் செல்லுபடியாகும் ஷிப்பிங் முகவரியை வழங்க வேண்டும்",
+                rule5: "வெற்றியாளர்கள் குறித்து KS Agency நிர்வாகிகளின் முடிவு இறுதியானது",
+                rule6: "பரிசுகள் வெற்றியாளர் உறுதிப்படுத்தப்பட்ட 15 நாட்களுக்குள் அனுப்பப்படும்",
+                rule7: "முடிவுகளை கையாளும் எந்த முயற்சியும் தகுதிநீக்கம் செய்யப்படும்",
+                contactTitle: "எங்களைத் தொடர்பு கொள்ள",
+                contactDesc: "கொடுப்பனவு பற்றி ஏதேனும் கேள்விகளுக்கு:",
+                contactNote: "காலை 10 மணி முதல் இரவு 10 மணி வரை<br>📆 தினமும்"
+            },
+            ml: {
+                anniversaryBadge: "1-ാം വാർഷികം!",
+                subtitle: "ഒരു അതിശയിപ്പിക്കുന്ന ആദ്യ വർഷത്തിന് നന്ദി!<br>ഞങ്ങളുടെ ShareChat ചാറ്റ് റൂമിലെ മുകളിൽ 3 സംഭാവകർ പ്രീമിയം സമ്മാനങ്ങൾ നേടും!",
+                giveawayTitle: "വാർഷിക ഗിവവേ സമ്മാനങ്ങൾ",
+                giveawayDesc: "ഞങ്ങളുടെ ShareChat ചാറ്റ് റൂമിൽ ഏറ്റവും കൂടുതൽ കോയിനുകളുള്ള മുകളിൽ 3 സംഭാവകർ ഈ അതിശയിപ്പിക്കുന്ന സമ്മാനങ്ങൾ നേടും!",
+                firstPrize: "1-ാം സ്ഥാനം",
+                firstPrizeDesc: "42 മണിക്കൂർ പ്ലേബാക്ക് ഉള്ള പ്രീമിയം വയർലെസ് ഇയർബഡ്സ്",
+                secondPrize: "2-ാം സ്ഥാനം",
+                secondPrizeDesc: "40 മണിക്കൂർ പ്ലേബാക്ക് ഉള്ള വയർലെസ് ഇയർബഡ്സ്",
+                thirdPrize: "3-ാം സ്ഥാനം",
+                thirdPrizeDesc: "60 മണിക്കൂർ പ്ലേബാക്ക് ഉള്ള വയർലെസ് ഇയർബഡ്സ്",
+                competitionPeriod: "മത്സര കാലയളവ്",
+                april1: "ഏപ്രിൽ 1",
+                april30: "ഏപ്രിൽ 30",
+                finalNote: "ഏപ്രിൽ 30, 2025 ന് ശേഷം ഫൈനൽ കോയിൻ എണ്ണം കണക്കാക്കും",
+                howToWin: "ജയിക്കാൻ എങ്ങനെ",
+                step1Title: "പരമാവധി കോയിനുകൾ നേടുക",
+                step1Desc: "സാധാരണ പങ്കാളിത്തത്തിലൂടെ ഏറ്റവും കൂടുതൽ കോയിനുകൾ സമ്പാദിക്കാൻ ഞങ്ങളുടെ ShareChat ചാറ്റ് റൂമിൽ ഏറ്റവും സജീവമായ സംഭാവകനായിരിക്കുക.",
+                step2Title: "അവസാന തീയതി വരെ നിലനിർത്തുക",
+                step2Desc: "[വാർഷിക തീയതി] വരെ മുകളിൽ 3 സ്ഥാനങ്ങളിൽ നിലനിൽക്കുക.",
+                step3Title: "നിങ്ങളുടെ സമ്മാനം ക്ലെയിം ചെയ്യുക",
+                step3Desc: "ജേതാക്കളെ ഗ്രൂപ്പിൽ പ്രഖ്യാപിക്കും, തങ്ങളുടെ സമ്മാനം ക്ലെയിം ചെയ്യാൻ 7 ദിവസത്തിനുള്ളിൽ പ്രതികരിക്കണം.",
+                rulesTitle: "ഗിവവേ നിയമങ്ങൾ",
+                rule1: "KS Agency ShareChat ചാറ്റ് റൂമിന്റെ സജീവ അംഗങ്ങൾക്ക് മാത്രമേ അർഹതയുള്ളൂ",
+                rule2: "വാർഷിക തീയതിയുടെ അവസാനത്തിൽ ഏറ്റവും കൂടുതൽ കോയിനുകളുള്ള മുകളിൽ 3 അംഗങ്ങൾ ജയിക്കും",
+                rule3: "കോയിനുകൾ സാധാരണ പങ്കാളിത്തത്തിലൂടെ നേടിയതായിരിക്കണം (കൃത്രിമമായി ബൂസ്റ്റ് ചെയ്യൽ ഇല്ല)",
+                rule4: "ജേതാക്കൾ പ്രഖ്യാപനത്തിന് 7 ദിവസത്തിനുള്ളിൽ സാധുതയുള്ള ഷിപ്പിംഗ് വിലാസം നൽകണം",
+                rule5: "ജേതാക്കളെ സംബന്ധിച്ച KS Agency അഡ്മിനുകളുടെ തീരുമാനം അന്തിമമായിരിക്കും",
+                rule6: "സമ്മാനങ്ങൾ ജേതാവിനെ സ്ഥിരീകരിച്ചതിന് ശേഷം 15 ദിവസത്തിനുള്ളിൽ ഷിപ്പ് ചെയ്യും",
+                rule7: "ഫലങ്ങൾ കൃത്രിമമായി മാറ്റാൻ ശ്രമിക്കുന്നത് അർഹതയില്ലാതാക്കും",
+                contactTitle: "ഞങ്ങളെ സമീപിക്കുക",
+                contactDesc: "ഗിവവേയെക്കുറിച്ചുള്ള ഏതെങ്കിലും ചോദ്യങ്ങൾക്ക്:",
+                contactNote: "പുലർച്ചെ 10 മുതൽ രാത്രി 10 വരെ<br>📆 എല്ലാ ദിവസവും"
+            },
+            te: {
+                anniversaryBadge: "1వ వార్షికోత్సవం!",
+                subtitle: "అద్భుతమైన మొదటి సంవత్సరానికి ధన్యవాదాలు!<br>మా ShareChat చాట్ రూమ్‌లో అత్యధిక కాయిన్‌లు ఉన్న టాప్ 3 సభ్యులకు ప్రీమియం బహుమతులు!",
+                giveawayTitle: "వార్షికోత్సవ బహుమతులు",
+                giveawayDesc: "మా ShareChat చాట్ రూమ్‌లో అత్యధిక కాయిన్‌లు ఉన్న టాప్ 3 సభ్యులు ఈ అద్భుతమైన బహుమతులను గెలుచుకుంటారు!",
+                firstPrize: "1వ స్థానం",
+                firstPrizeDesc: "42 గంటల ప్లేబ్యాక్ ఉన్న ప్రీమియం వైర్‌లెస్ ఇయర్‌బడ్స్",
+                secondPrize: "2వ స్థానం",
+                secondPrizeDesc: "40 గంటల ప్లేబ్యాక్ ఉన్న వైర్‌లెస్ ఇయర్‌బడ్స్",
+                thirdPrize: "3వ స్థానం",
+                thirdPrizeDesc: "60 గంటల ప్లేబ్యాక్ ఉన్న వైర్‌లెస్ ఇయర్‌బడ్స్",
+                competitionPeriod: "పోటీ కాలం",
+                april1: "ఏప్రిల్ 1",
+                april30: "ఏప్రిల్ 30",
+                finalNote: "ఏప్రిల్ 30, 2025 తర్వాత ఫైనల్ కాయిన్ లెక్కింపు జరుగుతుంది",
+                howToWin: "గెలవడం ఎలా",
+                step1Title: "గరిష్ఠ కాయిన్‌లను సంపాదించండి",
+                step1Desc: "మా ShareChat చాట్ రూమ్‌లో సాధారణ పాల్గొనడం ద్వారా అత్యధిక కాయిన్‌లను సంపాదించడానికి అత్యంత చురుకైన సభ్యుడిగా ఉండండి.",
+                step2Title: "గడువు వరకు నిర్వహించండి",
+                step2Desc: "[వార్షికోత్సవ తేదీ] వరకు టాప్ 3 స్థానాల్లో ఉండండి.",
+                step3Title: "మీ బహుమతిని క్లెయిమ్ చేయండి",
+                step3Desc: "గ్రూప్‌లో విజేతలు ప్రకటించబడతారు మరియు వారి బహుమతిని క్లెయిమ్ చేయడానికి 7 రోజుల్లో ప్రతిస్పందించాలి.",
+                rulesTitle: "బహుమతి నియమాలు",
+                rule1: "KS Agency ShareChat చాట్ రూమ్‌లో సక్రియ సభ్యులు మాత్రమే అర్హులు",
+                rule2: "వార్షికోత్సవ తేదీ ముగిసేసరికి అత్యధిక కాయిన్‌లు ఉన్న టాప్ 3 సభ్యులు గెలుస్తారు",
+                rule3: "కాయిన్‌లు సాధారణ పాల్గొనడం ద్వారా సంపాదించబడాలి (కృత్రిమ బూస్టింగ్ లేదు)",
+                rule4: "విజేతలు ప్రకటన తర్వాత 7 రోజుల్లో చెల్లుబాటు అయ్యే షిప్పింగ్ చిరునామాను అందించాలి",
+                rule5: "విజేతల గురించి KS Agency నిర్వాహకుల నిర్ణయం అంతిమమైనది",
+                rule6: "బహుమతులు విజేత నిర్ధారణ తర్వాత 15 రోజుల్లో షిప్పింగ్ చేయబడతాయి",
+                rule7: "ఫలితాలను మార్చడానికి ఏదైనా ప్రయత్నం అనర్హతకు దారితీస్తుంది",
+                contactTitle: "మమ్మల్ని సంప్రదించండి",
+                contactDesc: "బహుమతి గురించి ఏవైనా ప్రశ్నలకు:",
+                contactNote: "ఉదయం 10 నుండి రాత్రి 10 వరకు<br>📆 ప్రతిరోజు"
+            },
+            kn: {
+                anniversaryBadge: "1ನೇ ವಾರ್ಷಿಕೋತ್ಸವ!",
+                subtitle: "ಅದ್ಭುತವಾದ ಮೊದಲ ವರ್ಷಕ್ಕೆ ಧನ್ಯವಾದಗಳು!<br>ನಮ್ಮ ShareChat ಚಾಟ್ ರೂಮ್ನಲ್ಲಿ ಅತ್ಯಧಿಕ ನಾಣ್ಯಗಳನ್ನು ಹೊಂದಿರುವ ಟಾಪ್ 3 ಸದಸ್ಯರಿಗೆ ಪ್ರೀಮಿಯಂ ಬಹುಮಾನಗಳು!",
+                giveawayTitle: "ವಾರ್ಷಿಕೋತ್ಸವ ಬಹುಮಾನಗಳು",
+                giveawayDesc: "ನಮ್ಮ ShareChat ಚಾಟ್ ರೂಮ್ನಲ್ಲಿ ಅತ್ಯಧಿಕ ನಾಣ್ಯಗಳನ್ನು ಹೊಂದಿರುವ ಟಾಪ್ 3 ಸದಸ್ಯರು ಈ ಅದ್ಭುತ ಬಹುಮಾನಗಳನ್ನು ಗೆಲ್ಲುತ್ತಾರೆ!",
+                firstPrize: "1ನೇ ಸ್ಥಾನ",
+                firstPrizeDesc: "42 ಗಂಟೆಗಳ ಪ್ಲೇಬ್ಯಾಕ್ ಹೊಂದಿರುವ ಪ್ರೀಮಿಯಂ ವೈರ್ಲೆಸ್ ಇಯರ್ಬಡ್ಸ್",
+                secondPrize: "2ನೇ ಸ್ಥಾನ",
+                secondPrizeDesc: "40 ಗಂಟೆಗಳ ಪ್ಲೇಬ್ಯಾಕ್ ಹೊಂದಿರುವ ವೈರ್ಲೆಸ್ ಇಯರ್ಬಡ್ಸ್",
+                thirdPrize: "3ನೇ ಸ್ಥಾನ",
+                thirdPrizeDesc: "60 ಗಂಟೆಗಳ ಪ್ಲೇಬ್ಯಾಕ್ ಹೊಂದಿರುವ ವೈರ್ಲೆಸ್ ಇಯರ್ಬಡ್ಸ್",
+                competitionPeriod: "ಸ್ಪರ್ಧಾ ಅವಧಿ",
+                april1: "ಏಪ್ರಿಲ್ 1",
+                april30: "ಏಪ್ರಿಲ್ 30",
+                finalNote: "ಏಪ್ರಿಲ್ 30, 2025 ನಂತರ ಅಂತಿಮ ನಾಣ್ಯ ಎಣಿಕೆ ಲೆಕ್ಕಹಾಕಲಾಗುವುದು",
+                howToWin: "ಗೆಲ್ಲುವುದು ಹೇಗೆ",
+                step1Title: "ಗರಿಷ್ಠ ನಾಣ್ಯಗಳನ್ನು ಸಂಪಾದಿಸಿ",
+                step1Desc: "ನಮ್ಮ ShareChat ಚಾಟ್ ರೂಮ್ನಲ್ಲಿ ಸಾಮಾನ್ಯ ಭಾಗವಹಿಸುವಿಕೆಯ ಮೂಲಕ ಹೆಚ್ಚಿನ ನಾಣ್ಯಗಳನ್ನು ಸಂಗ್ರಹಿಸಲು ಅತ್ಯಂತ ಸಕ್ರಿಯ ಸದಸ್ಯರಾಗಿರಿ.",
+                step2Title: "ಕೊನೆಯ ದಿನಾಂಕದವರೆಗೆ ನಿರ್ವಹಿಸಿ",
+                step2Desc: "[ವಾರ್ಷಿಕೋತ್ಸವ ದಿನಾಂಕ] ವರೆಗೆ ಟಾಪ್ 3 ಸ್ಥಾನಗಳಲ್ಲಿ ಇರಿ.",
+                step3Title: "ನಿಮ್ಮ ಬಹುಮಾನವನ್ನು ಕ್ಲೈಮ್ ಮಾಡಿ",
+                step3Desc: "ಗೆಲ್ಲುವವರನ್ನು ಗುಂಪಿನಲ್ಲಿ ಘೋಷಿಸಲಾಗುವುದು ಮತ್ತು ಅವರ ಬಹುಮಾನವನ್ನು ಕ್ಲೈಮ್ ಮಾಡಲು 7 ದಿನಗಳಲ್ಲಿ ಪ್ರತಿಕ್ರಿಯಿಸಬೇಕು.",
+                rulesTitle: "ಬಹುಮಾನ ನಿಯಮಗಳು",
+                rule1: "KS Agency ShareChat ಚಾಟ್ ರೂಮ್ನ ಸಕ್ರಿಯ ಸದಸ್ಯರು ಮಾತ್ರ ಅರ್ಹರು",
+                rule2: "ವಾರ್ಷಿಕೋತ್ಸವ ದಿನಾಂಕದ ಕೊನೆಯಲ್ಲಿ ಹೆಚ್ಚಿನ ನಾಣ್ಯಗಳನ್ನು ಹೊಂದಿರುವ ಟಾಪ್ 3 ಸದಸ್ಯರು ಗೆಲ್ಲುತ್ತಾರೆ",
+                rule3: "ನಾಣ್ಯಗಳನ್ನು ಸಾಮಾನ್ಯ ಭಾಗವಹಿಸುವಿಕೆಯ ಮೂಲಕ ಗಳಿಸಬೇಕು (ಕೃತಕ ಬೂಸ್ಟಿಂಗ್ ಇಲ್ಲ)",
+                rule4: "ಗೆಲ್ಲುವವರು ಪ್ರಕಟಣೆಯ 7 ದಿನಗಳೊಳಗೆ ಮಾನ್ಯ ಶಿಪ್ಪಿಂಗ್ ವಿಳಾಸವನ್ನು ನೀಡಬೇಕು",
+                rule5: "ಗೆಲ್ಲುವವರ ಬಗ್ಗೆ KS Agency ನಿರ್ವಾಹಕರ ನಿರ್ಣಯ ಅಂತಿಮವಾಗಿರುತ್ತದೆ",
+                rule6: "ಬಹುಮಾನಗಳನ್ನು ಗೆಲ್ಲುವವರ ದೃಢೀಕರಣದ 15 ದಿನಗಳಲ್ಲಿ ಶಿಪ್ಪಿಂಗ್ ಮಾಡಲಾಗುವುದು",
+                rule7: "ಫಲಿತಾಂಶಗಳನ್ನು ಮ್ಯಾನಿಪುಲೇಟ್ ಮಾಡಲು ಯಾವುದೇ ಪ್ರಯತ್ನವು ಅನರ್ಹತೆಗೆ ಕಾರಣವಾಗುತ್ತದೆ",
+                contactTitle: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+                contactDesc: "ಬಹುಮಾನದ ಬಗ್ಗೆ ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿಗೆ:",
+                contactNote: "ಬೆಳಿಗ್ಗೆ 10 ರಿಂದ ರಾತ್ರಿ 10 ವರೆಗೆ<br>📆 ಪ್ರತಿದಿನ"
+            },
+            mr: {
+                anniversaryBadge: "1ले वर्धापनदिन!",
+                subtitle: "एक अप्रतिम पहिल्या वर्षाबद्दल धन्यवाद!<br>आमच्या ShareChat चॅटरूममधील टॉप 3 योगदानकर्त्यांना प्रीमियम भेटवस्तू मिळतील!",
+                giveawayTitle: "वर्धापनदिन भेटवस्तू",
+                giveawayDesc: "आमच्या ShareChat चॅटरूममधील सर्वाधिक नाणी असलेले टॉप 3 योगदानकर्ते हे अप्रतिम भेटवस्तू जिंकतील!",
+                firstPrize: "1ली पारितोषिक",
+                firstPrizeDesc: "42 तास प्लेबॅक असलेले प्रीमियम वायरलेस इयरबड्स",
+                secondPrize: "2री पारितोषिक",
+                secondPrizeDesc: "40 तास प्लेबॅक असलेले वायरलेस इयरबड्स",
+                thirdPrize: "3री पारितोषिक",
+                thirdPrizeDesc: "60 तास प्लेबॅक असलेले वायरलेस इयरबड्स",
+                competitionPeriod: "स्पर्धा कालावधी",
+                april1: "एप्रिल 1",
+                april30: "एप्रिल 30",
+                finalNote: "एप्रिल 30, 2025 नंतर अंतिम नाणी मोजली जातील",
+                howToWin: "जिंकण्यासाठी कसे",
+                step1Title: "जास्तीत जास्त नाणी मिळवा",
+                step1Desc: "नियमित सहभागाद्वारे सर्वाधिक नाणी गोळा करण्यासाठी आमच्या ShareChat चॅटरूममध्ये सर्वात सक्रिय योगदानकर्ता व्हा.",
+                step2Title: "अंतिम मुदतपर्यंत टिकवून ठेवा",
+                step2Desc: "[वर्धापनदिन तारीख] पर्यंत टॉप 3 स्थानांवर रहा.",
+                step3Title: "तुमचे बक्षीस मागवा",
+                step3Desc: "विजेत्यांची गटात घोषणा केली जाईल आणि त्यांनी त्यांचे बक्षीस मागवण्यासाठी 7 दिवसांच्या आत प्रतिसाद द्यावा.",
+                rulesTitle: "भेटवस्तू नियम",
+                rule1: "फक्त KS Agency ShareChat चॅटरूमचे सक्रिय सदस्य पात्र आहेत",
+                rule2: "वर्धापनदिनाच्या दिवशी सर्वाधिक नाणी असलेले टॉप 3 सदस्य जिंकतील",
+                rule3: "नाणी नियमित सहभागाद्वारे मिळवली पाहिजेत (कृत्रिम बूस्टिंग नाही)",
+                rule4: "विजेत्यांनी जाहीरातीनंतर 7 दिवसांच्या आत वैध शिपिंग पत्ता द्यावा",
+                rule5: "विजेत्यांबाबत KS Agency प्रशासकांचा निर्णय अंतिम असेल",
+                rule6: "विजेत्याच्या पुष्टीकरणानंतर 15 दिवसांच्या आत भेटवस्तू पाठवल्या जातील",
+                rule7: "निकालांवर हस्तक्षेप करण्याचा कोणताही प्रयत्न अपात्रतेकडे नेईल",
+                contactTitle: "आमच्याशी संपर्क साधा",
+                contactDesc: "भेटवस्तूबाबत कोणत्याही प्रश्नांसाठी:",
+                contactNote: "सकाळी 10 ते रात्री 10 पर्यंत<br>📆 रोज"
+            },
+            bn: {
+                anniversaryBadge: "১ম বার্ষিকী!",
+                subtitle: "একটি অসাধারণ প্রথম বছরের জন্য ধন্যবাদ!<br>আমাদের ShareChat চ্যাটরুমের শীর্ষ 3 অবদানকারীরা প্রিমিয়াম পুরস্কার জিতবে!",
+                giveawayTitle: "বার্ষিকী পুরস্কার",
+                giveawayDesc: "আমাদের ShareChat চ্যাটরুমে সর্বোচ্চ কয়েন সহ শীর্ষ 3 অবদানকারীরা এই অসাধারণ পুরস্কার জিতবে!",
+                firstPrize: "১ম পুরস্কার",
+                firstPrizeDesc: "42 ঘন্টা প্লেব্যাক সহ প্রিমিয়াম ওয়্যারলেস ইয়ারবাড",
+                secondPrize: "২য় পুরস্কার",
+                secondPrizeDesc: "40 ঘন্টা প্লেব্যাক সহ ওয়্যারলেস ইয়ারবাড",
+                thirdPrize: "৩য় পুরস্কার",
+                thirdPrizeDesc: "60 ঘন্টা প্লেব্যাক সহ ওয়্যারলেস ইয়ারবাড",
+                competitionPeriod: "প্রতিযোগিতার সময়কাল",
+                april1: "এপ্রিল 1",
+                april30: "এপ্রিল 30",
+                finalNote: "এপ্রিল 30, 2025 এর পর চূড়ান্ত কয়েন গণনা করা হবে",
+                howToWin: "কিভাবে জিতবেন",
+                step1Title: "সর্বাধিক কয়েন অর্জন করুন",
+                step1Desc: "নিয়মিত অংশগ্রহণের মাধ্যমে সর্বাধিক কয়েন সংগ্রহ করতে আমাদের ShareChat চ্যাটরুমে সবচেয়ে সক্রিয় অবদানকারী হন।",
+                step2Title: "শেষ তারিখ পর্যন্ত বজায় রাখুন",
+                step2Desc: "[বার্ষিকী তারিখ] পর্যন্ত শীর্ষ 3 অবস্থানে থাকুন।",
+                step3Title: "আপনার পুরস্কার দাবি করুন",
+                step3Desc: "গ্রুপে বিজয়ীদের ঘোষণা করা হবে এবং তাদের পুরস্কার দাবি করতে 7 দিনের মধ্যে সাড়া দিতে হবে।",
+                rulesTitle: "পুরস্কারের নিয়ম",
+                rule1: "শুধুমাত্র KS Agency ShareChat চ্যাটরুমের সক্রিয় সদস্যদের যোগ্য",
+                rule2: "বার্ষিকী তারিখের শেষে সর্বাধিক কয়েন সহ শীর্ষ 3 সদস্যরা জিতবে",
+                rule3: "কয়েন নিয়মিত অংশগ্রহণের মাধ্যমে অর্জন করতে হবে (কোন কৃত্রিম বুস্টিং নয়)",
+                rule4: "বিজয়ীদের অবশ্যই ঘোষণার 7 দিনের মধ্যে বৈধ শিপিং ঠিকানা প্রদান করতে হবে",
+                rule5: "বিজয়ীদের বিষয়ে KS Agency অ্যাডমিনদের সিদ্ধান্ত চূড়ান্ত হবে",
+                rule6: "বিজয়ী নিশ্চিত হওয়ার 15 দিনের মধ্যে পুরস্কার পাঠানো হবে",
+                rule7: "ফলাফল পরিবর্তনের কোন প্রচেষ্টা অযোগ্যতা ঘটাবে",
+                contactTitle: "আমাদের সাথে যোগাযোগ করুন",
+                contactDesc: "পুরস্কার সম্পর্কে কোন প্রশ্নের জন্য:",
+                contactNote: "সকাল 10 টা থেকে রাত 10 টা পর্যন্ত<br>📆 প্রতিদিন"
+            },
+            gu: {
+                anniversaryBadge: "1લી વાર્ષિકોત્સવ!",
+                subtitle: "એક અદ્ભુત પહેલા વર્ષ માટે આભાર!<br>અમારા ShareChat ચેટરૂમના ટોચના 3 યોગદાનકર્તાઓને પ્રીમિયમ ઇનામો મળશે!",
+                giveawayTitle: "વાર્ષિકોત્સવ ઇનામો",
+                giveawayDesc: "અમારા ShareChat ચેટરૂમમાં સૌથી વધુ કોઇન ધરાવતા ટોચના 3 યોગદાનકર્તાઓ આ અદ્ભુત ઇનામો જીતશે!",
+                firstPrize: "1લું ઇનામ",
+                firstPrizeDesc: "42 કલાક પ્લેબેક સાથે પ્રીમિયમ વાયરલેસ ઇયરબડ્સ",
+                secondPrize: "2જું ઇનામ",
+                secondPrizeDesc: "40 કલાક પ્લેબેક સાથે વાયરલેસ ઇયરબડ્સ",
+                thirdPrize: "3જું ઇનામ",
+                thirdPrizeDesc: "60 કલાક પ્લેબેક સાથે વાયરલેસ ઇયરબડ્સ",
+                competitionPeriod: "સ્પર્ધા સમયગાળો",
+                april1: "એપ્રિલ 1",
+                april30: "એપ્રિલ 30",
+                finalNote: "એપ્રિલ 30, 2025 પછી અંતિમ કોઇન ગણતરી કરવામાં આવશે",
+                howToWin: "કેવી રીતે જીતવું",
+                step1Title: "મહત્તમ કોઇન મેળવો",
+                step1Desc: "નિયમિત ભાગીદારી દ્વારા સૌથી વધુ કોઇન એકત્રિત કરવા માટે અમારા ShareChat ચેટરૂમમાં સૌથી સક્રિય યોગદાનકર્તા બનો.",
+                step2Title: "અંતિમ તારીખ સુધી જાળવો",
+                step2Desc: "[વાર્ષિકોત્સવ તારીખ] સુધી ટોચના 3 સ્થાનો પર રહો.",
+                step3Title: "તમારું ઇનામ ક્લેઇમ કરો",
+                step3Desc: "જીતનારાઓને જૂથમાં જાહેર કરવામાં આવશે અને તેમના ઇનામ ક્લેઇમ કરવા માટે 7 દિવસમાં જવાબ આપવો પડશે.",
+                rulesTitle: "ઇનામ નિયમો",
+                rule1: "માત્ર KS Agency ShareChat ચેટરૂમના સક્રિય સભ્યો પાત્ર છે",
+                rule2: "વાર્ષિકોત્સવ તારીખના અંતે સૌથી વધુ કોઇન ધરાવતા ટોચના 3 સભ્યો જીતશે",
+                rule3: "કોઇન નિયમિત ભાગીદારી દ્વારા મેળવવી જોઈએ (કોઈ કૃત્રિમ બૂસ્ટિંગ નહીં)",
+                rule4: "જીતનારાઓએ જાહેરાતના 7 દિવસમાં માન્ય શિપિંગ સરનામું આપવું પડશે",
+                rule5: "જીતનારાઓ વિશે KS Agency એડમિનનો નિર્ણય અંતિમ હશે",
+                rule6: "જીતનારની પુષ્ટિ પછી 15 દિવસમાં ઇનામો મોકલવામાં આવશે",
+                rule7: "પરિણામોમાં ફેરફાર કરવાનો કોઈ પણ પ્રયાસ અપાત્રતા તરફ દોરી જશે",
+                contactTitle: "અમારો સંપર્ક કરો",
+                contactDesc: "ઇનામ વિશે કોઈ પ્રશ્નો માટે:",
+                contactNote: "સવારે 10 થી રાત્રે 10 સુધી<br>📆 રોજ"
+            },
+            pa: {
+                anniversaryBadge: "1ਵਾਂ ਵਰ੍ਹੇਗੰਢ!",
+                subtitle: "ਇੱਕ ਸ਼ਾਨਦਾਰ ਪਹਿਲੇ ਸਾਲ ਲਈ ਧੰਨਵਾਦ!<br>ਸਾਡੇ ShareChat ਚੈਟਰੂਮ ਦੇ ਚੋਟੀ ਦੇ 3 ਯੋਗਦਾਨ ਪਾਉਣ ਵਾਲਿਆਂ ਨੂੰ ਪ੍ਰੀਮੀਅਮ ਇਨਾਮ ਮਿਲੇਗਾ!",
+                giveawayTitle: "ਸਾਲਾਨਾ ਇਨਾਮ",
+                giveawayDesc: "ਸਾਡੇ ShareChat ਚੈਟਰੂਮ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਧ ਸਿੱਕੇ ਵਾਲੇ ਚੋਟੀ ਦੇ 3 ਯੋਗਦਾਨ ਪਾਉਣ ਵਾਲੇ ਇਹ ਸ਼ਾਨਦਾਰ ਇਨਾਮ ਜਿੱਤਣਗੇ!",
+                firstPrize: "1ਲਾ ਇਨਾਮ",
+                firstPrizeDesc: "42 ਘੰਟੇ ਪਲੇਬੈਕ ਵਾਲੇ ਪ੍ਰੀਮੀਅਮ ਵਾਇਰਲੈਸ ਈਅਰਬੱਡ",
+                secondPrize: "2ਜਾ ਇਨਾਮ",
+                secondPrizeDesc: "40 ਘੰਟੇ ਪਲੇਬੈਕ ਵਾਲੇ ਵਾਇਰਲੈਸ ਈਅਰਬੱਡ",
+                thirdPrize: "3ਜਾ ਇਨਾਮ",
+                thirdPrizeDesc: "60 ਘੰਟੇ ਪਲੇਬੈਕ ਵਾਲੇ ਵਾਇਰਲੈਸ ਈਅਰਬੱਡ",
+                competitionPeriod: "ਮੁਕਾਬਲੇ ਦੀ ਮਿਆਦ",
+                april1: "ਅਪ੍ਰੈਲ 1",
+                april30: "ਅਪ੍ਰੈਲ 30",
+                finalNote: "ਅਪ੍ਰੈਲ 30, 2025 ਤੋਂ ਬਾਅਦ ਅੰਤਿਮ ਸਿੱਕੇ ਦੀ ਗਿਣਤੀ ਕੀਤੀ ਜਾਵੇਗੀ",
+                howToWin: "ਕਿਵੇਂ ਜਿੱਤਣਾ ਹੈ",
+                step1Title: "ਵੱਧ ਤੋਂ ਵੱਧ ਸਿੱਕੇ ਕਮਾਓ",
+                step1Desc: "ਨਿਯਮਿਤ ਭਾਗੀਦਾਰੀ ਦੁਆਰਾ ਸਭ ਤੋਂ ਵੱਧ ਸਿੱਕੇ ਇਕੱਠੇ ਕਰਨ ਲਈ ਸਾਡੇ ShareChat ਚੈਟਰੂਮ ਵਿੱਚ ਸਭ ਤੋਂ ਸਰਗਰਮ ਯੋਗਦਾਨ ਪਾਉਣ ਵਾਲਾ ਬਣੋ.",
+                step2Title: "ਅੰਤਿਤ ਤਾਰੀਖ ਤੱਕ ਕਾਇਮ ਰੱਖੋ",
+                step2Desc: "[ਸਾਲਾਨਾ ਤਾਰੀਖ] ਤੱਕ ਚੋਟੀ ਦੇ 3 ਸਥਾਨਾਂ 'ਤੇ ਰਹੋ.",
+                step3Title: "ਆਪਣਾ ਇਨਾਮ ਕਲੇਮ ਕਰੋ",
+                step3Desc: "ਜੇਤੂਆਂ ਨੂੰ ਗਰੁੱਪ ਵਿੱਚ ਐਲਾਨ ਕੀਤਾ ਜਾਵੇਗਾ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਆਪਣਾ ਇਨਾਮ ਕਲੇਮ ਕਰਨ ਲਈ 7 ਦਿਨਾਂ ਵਿੱਚ ਜਵਾਬ ਦੇਣਾ ਪਵੇਗਾ.",
+                rulesTitle: "ਇਨਾਮ ਦੇ ਨਿਯਮ",
+                rule1: "ਸਿਰਫ਼ KS Agency ShareChat ਚੈਟਰੂਮ ਦੇ ਸਰਗਰਮ ਮੈਂਬਰ ਪਾਤਰ ਹਨ",
+                rule2: "ਸਾਲਾਨਾ ਤਾਰੀਖ ਦੇ ਅੰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਧ ਸਿੱਕੇ ਵਾਲੇ ਚੋਟੀ ਦੇ 3 ਮੈਂਬਰ ਜਿੱਤਣਗੇ",
+                rule3: "ਸਿੱਕੇ ਨਿਯਮਿਤ ਭਾਗੀਦਾਰੀ ਰਾਹੀਂ ਕਮਾਏ ਜਾਣੇ ਚਾਹੀਦੇ ਹਨ (ਕੋਈ ਕ੍ਰਿਤਰਿਮ ਬੂਸਟਿੰਗ ਨਹੀਂ)",
+                rule4: "ਜੇਤੂਆਂ ਨੂੰ ਐਲਾਨ ਤੋਂ 7 ਦਿਨਾਂ ਦੇ ਅੰਦਰ ਵੈਧ ਸ਼ਿਪਿੰਗ ਪਤਾ ਦੇਣਾ ਪਵੇਗਾ",
+                rule5: "ਜੇਤੂਆਂ ਬਾਰੇ KS Agency ਪ੍ਰਸ਼ਾਸਕਾਂ ਦਾ ਫੈਸਲਾ ਅੰਤਿਮ ਹੋਵੇਗਾ",
+                rule6: "ਜੇਤੂ ਦੀ ਪੁਸ਼ਟੀ ਤੋਂ 15 ਦਿਨਾਂ ਵਿੱਚ ਇਨਾਮ ਭੇਜ ਦਿੱਤੇ ਜਾਣਗੇ",
+                rule7: "ਨਤੀਜਿਆਂ ਨੂੰ ਹੇਰਾਫੇਰੀ ਕਰਨ ਦੀ ਕੋਈ ਵੀ ਕੋਸ਼ਿਸ਼ ਅਯੋਗਤਾ ਵੱਲ ਲੈ ਜਾਵੇਗੀ",
+                contactTitle: "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+                contactDesc: "ਇਨਾਮ ਬਾਰੇ ਕੋਈ ਵੀ ਪ੍ਰਸ਼ਨ ਲਈ:",
+                contactNote: "ਸਵੇਰੇ 10 ਵਜੇ ਤੋਂ ਰਾਤ 10 ਵਜੇ ਤੱਕ<br>📆 ਰੋਜ਼"
+            }
+        };
+
+        // Language selection functionality
+        const languageOptions = document.querySelectorAll('.language-option');
+        
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                languageDropdown.classList.remove('show');
+                
+                // Update active language indicator
+                languageOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with English
+        changeLanguage('en');
     </script>
 </body>
 </html>
