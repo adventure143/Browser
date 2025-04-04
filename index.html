@@ -27,6 +27,7 @@
         
         html {
             font-size: 16px;
+            scroll-behavior: smooth;
         }
         
         body {
@@ -38,7 +39,8 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            touch-action: manipulation;
+            touch-action: pan-y;
+            overflow-x: hidden;
         }
         
         /* Disable image dragging */
@@ -517,6 +519,38 @@
             margin-top: 0.5rem;
         }
         
+        /* Auto-scroll controls */
+        .scroll-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .scroll-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+        
         /* Enhanced Mobile Responsiveness */
         @media (max-width: 400px) {
             .contact-card {
@@ -544,6 +578,12 @@
             
             .contact-note {
                 font-size: 0.8rem;
+            }
+            
+            .scroll-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
         
@@ -810,6 +850,19 @@
         </section>
     </div>
 
+    <!-- Auto-scroll controls -->
+    <div class="scroll-controls">
+        <button class="scroll-btn" id="startScroll" title="Start Auto Scroll">
+            <i class="fas fa-play"></i>
+        </button>
+        <button class="scroll-btn" id="stopScroll" title="Stop Auto Scroll">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button class="scroll-btn" id="toTop" title="Scroll to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
     <script>
         // Prevent right-click context menu
         document.addEventListener('contextmenu', function(e) {
@@ -849,6 +902,59 @@
         // Prevent zooming and other touch manipulations
         document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
+        });
+
+        // Auto-scroll functionality
+        let scrollInterval;
+        const scrollSpeed = 50; // Pixels per second (adjust this to change speed)
+        let isAutoScrolling = false;
+
+        function startAutoScroll() {
+            if (isAutoScrolling) return;
+            isAutoScrolling = true;
+            
+            const scrollStep = scrollSpeed / 60; // Calculate step per frame (60fps)
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            
+            scrollInterval = setInterval(() => {
+                const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (currentPosition >= maxScroll) {
+                    // Reached bottom - stop or loop to top
+                    clearInterval(scrollInterval);
+                    isAutoScrolling = false;
+                    return;
+                }
+                
+                window.scrollBy(0, scrollStep);
+            }, 1000/60); // 60fps
+        }
+
+        function stopAutoScroll() {
+            clearInterval(scrollInterval);
+            isAutoScrolling = false;
+        }
+
+        function scrollToTop() {
+            stopAutoScroll();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Event listeners for buttons
+        document.getElementById('startScroll').addEventListener('click', startAutoScroll);
+        document.getElementById('stopScroll').addEventListener('click', stopAutoScroll);
+        document.getElementById('toTop').addEventListener('click', scrollToTop);
+
+        // Pause auto-scroll when user interacts
+        window.addEventListener('wheel', stopAutoScroll);
+        window.addEventListener('touchmove', stopAutoScroll);
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                stopAutoScroll();
+            }
         });
     </script>
 </body>
