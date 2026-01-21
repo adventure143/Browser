@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS Agency | Official Partner</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563EB',
+                            dark: '#1e3a8a',
+                            light: '#EFF6FF',
+                        },
+                        gold: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'card': '0 15px 35px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.03)',
+                        'hover': '0 25px 50px -12px rgba(37, 99, 235, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle Background Pattern */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.6;
+        }
+
+        /* Pro Card Design */
+        .pro-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            box-shadow: var(--tw-shadow-card);
+            border: 1px solid rgba(255,255,255,1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pro-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--tw-shadow-hover);
+        }
+
+        /* Verified Agency Badge (Blue Style) */
+        .badge-verified {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border: 1px solid #BFDBFE;
+            color: #1E40AF;
+        }
+
+        /* Copy Button Animation */
+        @keyframes successPop {
+            0% { transform: scale(0.9); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .pop-anim {
+            animation: successPop 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="pb-12 relative min-h-screen">
+
+    <div class="bg-pattern fixed inset-0"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-lg mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <span class="font-bold text-xl tracking-tighter">KS</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-gray-900 leading-none text-lg">KS Agency</h1>
+                    <p class="text-[10px] text-gray-500 font-medium tracking-wide mt-0.5">EST. 2024</p>
+                </div>
+            </div>
+            
+            <!-- Verified Agency Badge -->
+            <div class="badge-verified px-3 py-1.5 rounded-full flex items-center gap-2 shadow-sm">
+                <i class="fas fa-check-circle text-blue-600 text-xs"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wide">Verified Agency</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-lg mx-auto px-6 mt-8 flex flex-col gap-8">
+        
+        <!-- Hero Header -->
+        <header class="text-center animate-fade-in-up">
+            <h2 class="text-3xl font-extrabold text-gray-900 leading-[1.2] mb-3">
+                India's Most Trusted <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-400">Audio Agency</span>
+            </h2>
+            <p class="text-gray-500 text-sm leading-relaxed px-4">
+                Join KS Agency family. Earn monthly salary, get official support, and grow your profile on ShareChat.
+            </p>
+        </header>
+
+        <!-- CODE CARD -->
+        <section class="pro-card p-1">
+            <div class="bg-gradient-to-b from-white to-gray-50 rounded-[20px] p-6 text-center border border-gray-50 relative">
+                <!-- Decorative Blur -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Official Referral Code</p>
+                
+                <div class="bg-white border-2 border-brand-light rounded-2xl p-5 mb-5 shadow-inner relative group cursor-pointer transition-colors hover:border-brand-blue/30" onclick="copyCode()">
+                    <div class="flex items-center justify-center gap-3">
+                        <span class="text-2xl font-mono font-bold text-gray-800 tracking-wider" id="referralCode">32ksfamily</span>
+                        <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 group-hover:text-brand-blue transition-all">
+                            <i class="far fa-copy text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button onclick="copyCode()" id="copyBtn" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3.5 rounded-xl shadow-xl shadow-gray-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                    <span>Copy Code</span>
+                </button>
+                
+                <p class="text-[10px] text-gray-400 mt-3 font-medium">Use this code to join as a Rising Star</p>
+            </div>
+        </section>
+
+        <!-- Agency Benefits -->
+        <section>
+            <div class="flex items-center gap-2 mb-5 px-1">
+                <div class="h-6 w-1 bg-brand-blue rounded-full"></div>
+                <h3 class="font-bold text-gray-800 text-lg">Agency Benefits</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-5">
+                <!-- Salary Card -->
+                <div class="pro-card p-6 flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center shrink-0 shadow-sm border border-green-100">
+                        <i class="fas fa-wallet text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-base">On-Time Salary</h4>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            We guarantee payment transparency. Your monthly salary is credited within the <strong class="text-gray-900">1st week</strong> of every month.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Growth Card -->
+                <div class="pro-card p-6 flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0 shadow-sm border border-blue-100">
+                        <i class="fas fa-rocket text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-base">Profile Growth</h4>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Get verified badge assistance, traffic boosting for your chatroom, and exclusive event access.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Support Card -->
+                <div class="pro-card p-6 flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center shrink-0 shadow-sm border border-purple-100">
+                        <i class="fas fa-headset text-purple-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-base">24/7 Mentorship</h4>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Direct WhatsApp support for all your doubts regarding targets, gifting, and salary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="pro-card p-6">
+            <div class="flex items-center gap-2 mb-6">
+                <div class="h-6 w-1 bg-brand-blue rounded-full"></div>
+                <h3 class="font-bold text-gray-800 text-lg">Your Journey to Success</h3>
+            </div>
+            
+            <div class="space-y-8 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gray-100">
+                
+                <!-- Step 1 -->
+                <div class="relative flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white border-4 border-blue-50 flex items-center justify-center text-brand-blue font-bold text-sm z-10 shadow-sm">1</div>
+                    <div class="pt-1">
+                        <h5 class="font-bold text-sm text-gray-900">Copy the Code</h5>
+                        <p class="text-xs text-gray-500 mt-1">Use <span class="font-mono bg-gray-100 px-1 rounded text-gray-800">32ksfamily</span> for registration.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white border-4 border-blue-50 flex items-center justify-center text-brand-blue font-bold text-sm z-10 shadow-sm">2</div>
+                    <div class="pt-1">
+                        <h5 class="font-bold text-sm text-gray-900">Join via ShareChat</h5>
+                        <p class="text-xs text-gray-500 mt-1">Click the join button below and fill the form.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white border-4 border-blue-50 flex items-center justify-center text-brand-blue font-bold text-sm z-10 shadow-sm">3</div>
+                    <div class="pt-1">
+                        <h5 class="font-bold text-sm text-gray-900">Start Earning</h5>
+                        <p class="text-xs text-gray-500 mt-1">Complete tasks and get paid monthly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final Call to Action -->
+        <section class="mt-4 mb-8">
+            <div class="pro-card p-8 text-center bg-gray-900 text-white border-none shadow-xl shadow-gray-300 relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-5 rounded-full blur-3xl transform translate-x-10 -translate-y-10"></div>
+                
+                <h3 class="text-2xl font-bold mb-2 relative z-10 text-white">Ready to Join?</h3>
+                <p class="text-gray-400 text-sm mb-6 relative z-10">Don't miss the opportunity to become a top creator.</p>
+                
+                <div class="flex flex-col gap-3 relative z-10">
+                    <a href="https://sharechat.com/family/SAMB0739" target="_blank" class="w-full bg-brand-blue hover:bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/50 transition-transform active:scale-[0.98] flex items-center justify-center gap-2">
+                        <span>Join KS Family Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="tel:9655636477" class="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-xl border border-white/10 transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-phone-alt text-sm"></i>
+                        <span>Call Support: 9655636477</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 border-t border-gray-200/60 bg-white/50 backdrop-blur-sm rounded-t-3xl mt-4">
+            <!-- Increased Text Size -->
+            <p class="font-bold text-gray-900 text-2xl tracking-wide">KS Agency</p>
+            <p class="text-xs text-gray-400 mt-2 mb-6">© 2024 All Rights Reserved</p>
+            
+            <!-- Social Icons (No Background, Just Icons) -->
+            <div class="flex justify-center items-center gap-8">
+                <!-- WhatsApp Icon -->
+                <a href="https://wa.me/919655636477" target="_blank" class="text-[#25D366] text-4xl hover:opacity-80 transition-transform active:scale-90">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                
+                <!-- YouTube Icon -->
+                <a href="https://youtube.com/@ks_agency_143" target="_blank" class="text-[#FF0000] text-4xl hover:opacity-80 transition-transform active:scale-90">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-24 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 opacity-0 transition-all duration-300 z-50 pointer-events-none transform translate-y-[-10px]">
+        <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-black text-[10px]">
+            <i class="fas fa-check"></i>
+        </div>
+        <span class="text-sm font-medium">Code Copied!</span>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById("referralCode").innerText;
+            const btn = document.getElementById("copyBtn");
+            const originalBtnText = btn.innerHTML;
+            
+            // Haptic
+            if (window.navigator && window.navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(code).then(() => {
+                    handleSuccess(btn, originalBtnText);
+                }).catch(() => fallbackCopy(code, btn, originalBtnText));
+            } else {
+                fallbackCopy(code, btn, originalBtnText);
+            }
+        }
+
+        function fallbackCopy(text, btn, originalBtnText) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                handleSuccess(btn, originalBtnText);
+            } catch (err) {
+                console.error('Fallback copy failed', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function handleSuccess(btn, originalBtnText) {
+            // Button Feedback
+            btn.innerHTML = '<i class="fas fa-check"></i> <span>Copied!</span>';
+            btn.classList.add("bg-green-600", "text-white", "pop-anim");
+            btn.classList.remove("bg-gray-900");
+
+            // Show Toast
+            const toast = document.getElementById("toast");
+            toast.classList.remove("opacity-0", "translate-y-[-10px]");
+            toast.classList.add("translate-y-0");
+
+            // Reset
+            setTimeout(() => {
+                toast.classList.add("opacity-0", "translate-y-[-10px]");
+                toast.classList.remove("translate-y-0");
+                
+                btn.innerHTML = originalBtnText;
+                btn.classList.remove("bg-green-600", "pop-anim");
+                btn.classList.add("bg-gray-900");
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
+
